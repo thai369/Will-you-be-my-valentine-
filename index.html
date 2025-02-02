@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffebef;
+            color: #d63384;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .heart {
+            font-size: 4em;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        .buttons {
+            margin-top: 30px;
+            position: relative;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4d79;
+            color: white;
+        }
+        .yes:hover {
+            background-color: #d63384;
+        }
+        .no {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+        }
+        .message {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #ff4d79;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine? ❤️</h1>
+    <p class="heart">💕</p>
+    
+    <div class="buttons">
+        <button class="yes" onclick="showLoveMessage()">Yes</button>
+        <button class="no" id="noButton">No</button>
+    </div>
+
+    <div id="loveMessage" class="message" style="display: none;">💗 AHHHH SLANH U KHLGx2!💗</div>
+
+    <script>
+        // Function to show the love message
+        function showLoveMessage() {
+            document.getElementById("loveMessage").style.display = "block";
+        }
+
+        // Function to move the "No" button
+        document.getElementById("noButton").addEventListener("mouseover", function() {
+            let button = document.getElementById("noButton");
+            let x = Math.random() * (window.innerWidth - button.offsetWidth);
+            let y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        });
+    </script>
+</body>
+</html>
+
